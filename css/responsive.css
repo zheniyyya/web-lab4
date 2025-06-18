@@ -1,0 +1,49 @@
+
+@media(max-width: 1000px) {
+    .delivery-info .main-info .info-details .delivery-status {
+        display: none;
+    }
+}
+
+@media(max-width: 800px) {
+    .delivery-info .main-info .info-details .working-hours {
+        display: none;
+    }
+
+    .sign-in {
+        float: left;
+    }
+}
+
+@media(max-width: 730px) {
+    .ordered-item .details .size {
+        width: 40px;
+    }
+
+    .cart {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-left: 0;
+        min-width: 350px;
+        z-index: 1;
+        box-shadow: none;
+        margin-top: 100px;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .list {
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        top: 800px;
+    }
+
+    .buy-section {
+        position: relative;
+        bottom: 0;
+    }
+}

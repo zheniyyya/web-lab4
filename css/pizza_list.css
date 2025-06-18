@@ -1,0 +1,263 @@
+.list {
+    min-width: 350px;
+    position: absolute;
+    top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(100% - 350px);
+    height: fit-content;
+    background-color: #fffff6;
+    overflow: visible;
+}
+
+.pizza-filters {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    opacity: 85%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.pizza-filters span {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.pizza-filters .pizzas-amount {
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #F2711D;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.filters {
+    color: #F2711D;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+    opacity: 85%;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.filters span {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 10px;
+}
+
+.meat:hover, .pineapple:hover, .mushrooms:hover, .seafood:hover, .vegan:hover, .all:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pizza-item {
+    position: relative;
+    border-radius: 5px;
+    border: 0.5px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 330px;
+    height: 640px;
+    background-color: #ffffff;
+    z-index: 1;
+    padding: 15px;
+}
+
+.name, .pizza-type, .ingredients {
+    margin-left: 0;
+}
+
+.pizza-item img {
+    width: 95%;
+    margin: 2.5%;
+}
+
+.name, .pizza-type, .ingredients {
+    margin-left: 10px;
+}
+
+.name {
+    font-weight: bold;
+    display: block;
+    color: #F2711D;
+    font-size: 34px;
+}
+
+.pizza-type {
+    color: #b1afaf;
+    font-size: 10px;
+}
+
+.ingredients {
+    height: 52px;
+    display: block;
+    margin-top: 0;
+    font-size: 14px;
+    width: 80%;
+}
+
+/* ---  Size and Price info --- */
+.size-info {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.size-l, .size-s {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.size-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+    color: #a0a0a0;
+}
+
+.size, .weight {
+    width: auto;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Іконка для розміру (діаметра) */
+.size::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/size-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+/* Іконка для ваги */
+.weight::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/weight.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+/* Стилі для блоку ціни */
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+/* Стиль для великих цифр ціни */
+.price .price-value {
+    font-size: 34px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* "грн." */
+.price .currency {
+    font-size: 16px;
+    color: #555;
+}
+
+/* "Купити" */
+.size-l button, .size-s button {
+    width: 100%;
+    background-color: #F2711D;
+    border: 1px solid #e06311;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+/*олір при наведенні
+ */
+.size-l button:hover, .size-s button:hover {
+    background-color: #d85c10;
+    border-color: #d85c10;
+}
+
+/* --- new/popular--- */
+.new {
+    height: 25px;
+    width: 50px;
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    z-index: 2;
+    background-color: #cb5b51;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.popular {
+    height: 25px;
+    width: 100px;
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    z-index: 2;
+    background-color: #72b763;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+
