@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "image": "images/pizza_1.jpg",
+    "name": "Гавайська",
+    "type": "М'ясна піца",
+    "ingredients": "Соус вершковий, сир моцарела, курка, ананаси, кукурудза, шинка",
+    "isPopular": true,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 490,
+        "price": 215
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 830,
+        "price": 295
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "images/pizza_2.jpg",
+    "name": "Імпреза",
+    "type": "М'ясна піца",
+    "ingredients": "Соус томатний, сир моцарела, салямі пепероні, мисливські ковбаски, гриби, оливки",
+    "isPopular": true,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 450,
+        "price": 210
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 780,
+        "price": 290
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "images/pizza_3.jpg",
+    "name": "Маргарита",
+    "type": "Вегетаріанська",
+    "ingredients": "Соус томатний, сир моцарела, свіжі помідори, базилік",
+    "isPopular": false,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 400,
+        "price": 190
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 720,
+        "price": 260
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "images/pizza_4.jpg",
+    "name": "З лососем",
+    "type": "З морепродуктами",
+    "ingredients": "Соус вершковий, сир моцарела, філе лосося, ікра",
+    "isPopular": false,
+    "isNew": true,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 420,
+        "price": 290
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 750,
+        "price": 410
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "images/pizza_5.jpg",
+    "name": "BBQ",
+    "type": "М'ясна піца",
+    "ingredients": "Соус BBQ, сир моцарела, курка, бекон, салямі, гриби, болгарський перець",
+    "isPopular": true,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 580,
+        "price": 250
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 950,
+        "price": 340
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "images/pizza_6.jpg",
+    "name": "Баварська",
+    "type": "М'ясна піца",
+    "ingredients": "Соус вершковий, сир моцарела, мисливські ковбаски, курка, мариновані огірки, цибуля, гриби",
+    "isPopular": false,
+    "isNew": true,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 570,
+        "price": 255
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 940,
+        "price": 345
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "images/pizza_7.jpg",
+    "name": "Міксовий поло",
+    "type": "М'ясна піца",
+    "ingredients": "Соус томатний, сир моцарела, салямі, шинка, ананаси",
+    "isPopular": true,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 510,
+        "price": 230
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 850,
+        "price": 310
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "images/pizza_8.jpg",
+    "name": "Сициліано",
+    "type": "З морепродуктами",
+    "ingredients": "Соус вершковий, сир моцарела, креветки, мідії, кальмари, ікра",
+    "isPopular": false,
+    "isNew": true,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 550,
+        "price": 280
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 920,
+        "price": 390
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "images/pizza_9.jpg",
+    "name": "Карбонара",
+    "type": "М'ясна піца",
+    "ingredients": "Соус вершковий, сир моцарела, бекон, салямі, курка, сирний соус",
+    "isPopular": false,
+    "isNew": false,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 530,
+        "price": 240
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 890,
+        "price": 330
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "images/pizza_10.webp",
+    "name": "Мексиканська",
+    "type": "Гостра піца",
+    "ingredients": "Соус сальса, сир моцарела, яловичий фарш, перець халапеньо, кукурудза",
+    "isPopular": false,
+    "isNew": true,
+    "sizes": [
+      {
+        "size": "S",
+        "diameter": 30,
+        "weight": 570,
+        "price": 255
+      },
+      {
+        "size": "L",
+        "diameter": 40,
+        "weight": 940,
+        "price": 345
+      }
+    ]
+  }
+]
