@@ -2,9 +2,9 @@
     min-width: 350px;
     position: absolute;
     top: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    gap: 30px;
     box-sizing: border-box;
     width: calc(100% - 350px);
     height: fit-content;
@@ -13,21 +13,20 @@
 }
 
 .pizza-filters {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
     box-sizing: border-box;
     height: fit-content;
     width: 100%;
     opacity: 85%;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
     font-size: 34px;
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 .pizza-filters span {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -50,13 +49,13 @@
 .filters {
     color: #F2711D;
     align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
     box-sizing: border-box;
     height: 30px;
     width: 100%;
     opacity: 85%;
-    justify-content: center;
     font-size: 16px;
     font-weight: lighter;
     margin-bottom: 10px;
@@ -80,8 +79,8 @@
     position: relative;
     border-radius: 5px;
     border: 0.5px solid lightgrey;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
     box-sizing: border-box;
     width: 330px;
     height: 640px;
@@ -125,37 +124,39 @@
 
 /* ---  Size and Price info --- */
 .size-info {
-    margin-top: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     margin-left: 0;
     margin-right: 0;
 }
 
 .size-l, .size-s {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
     align-items: center;
+    justify-items: center;
 }
 
+/* Виправлений код */
 .size-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
+    display: grid;
+    justify-items: center;
+    gap: 5px;
     margin-bottom: 5px;
     color: #a0a0a0;
 }
 
 .size, .weight {
     width: auto;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     font-size: 14px;
 }
 
-/* Іконка для розміру (діаметра) */
+/* Іконка для розміру */
 .size::before {
     content: '';
     display: inline-block;
@@ -185,8 +186,8 @@
 
 /* Стилі для блоку ціни */
 .price {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: center;
     align-items: baseline;
     gap: 5px;
@@ -216,48 +217,46 @@
     color: white;
     font-size: 16px;
     font-weight: bold;
-    margin-top: auto;
+    align-self: end;
     cursor: pointer;
 }
 
-/*олір при наведенні
- */
+/*колір при наведенні*/
 .size-l button:hover, .size-s button:hover {
     background-color: #d85c10;
     border-color: #d85c10;
 }
 
 /* --- new/popular--- */
-.new {
+.new, .popular {
     height: 25px;
-    width: 50px;
     position: absolute;
     top: -12px;
     right: 20px;
     z-index: 2;
-    background-color: #cb5b51;
     color: white;
     font-weight: bold;
     font-size: 16px;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+}
+
+.new {
+    width: 50px;
+    background-color: #cb5b51;
 }
 
 .popular {
-    height: 25px;
     width: 100px;
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    z-index: 2;
     background-color: #72b763;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
 }
 
 
+.pizza-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 330px);
+    justify-content: center;
+    width: 100%;
+    gap: 20px; /*відступи між картками*/
+}

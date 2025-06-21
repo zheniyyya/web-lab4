@@ -1,5 +1,6 @@
 .cart {
-    display: block;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     box-sizing: border-box;
     height: 100%;
     width: 350px;
@@ -13,54 +14,59 @@
 
 .cart-title {
     background-color: white;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    height: 100px;
-    font-size: 12px;
+    height: 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.cart .cart-title span {
-    font-size: 26px;
+.cart .cart-title > span:first-child {
+    font-size: 24px;
     font-weight: bold;
-    margin-left: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
 }
 
 .cart .cart-title span span {
-    margin-left: 4px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
     background-color: #F2711D;
-    border-radius: 45%;
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    line-height: 1;
 }
 
 .cart .cart-title .clear-order {
-    padding-top: 5px;
-    padding-right: 10px;
-    position: absolute;
-    right: 0;
+    font-size: 13px;
+    color: #b0b0b0;
+    cursor: pointer;
 }
 
 .clear-order:hover {
     text-decoration: underline;
-    color: blue;
-    cursor: pointer;
+    color: #F2711D;
 }
 
 .order-list {
-    height: calc(100% - 100px - 140px);
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: white;
 }
 
 .ordered-item {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
     height: 120px;
     border-bottom: 1px solid #e0e0e0;
@@ -70,22 +76,16 @@
 
 
 .details {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: space-between;
-    flex: 1;
     height: 100%;
-    order: 1;
 }
 
 .order-picture {
     width: 70px;
     height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    order: 2;
+    display: grid;
+    place-items: center;
     margin-left: 15px;
 }
 
@@ -103,14 +103,17 @@
 }
 
 .order-info {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
+    justify-content: start;
     gap: 15px;
 }
 
 .ordered-item .details .size,
 .ordered-item .details .weight {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     color: #a0a0a0;
     font-size: 14px;
@@ -145,7 +148,8 @@
 
 .control-panel {
     height: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
 }
 
@@ -153,11 +157,11 @@
     font-size: 18px;
     font-weight: bold;
     color: black;
-    margin-right: auto;
 }
 
 .amount-control {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     gap: 7px;
 }
@@ -170,9 +174,8 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 }
 
 .control-panel .plus {
@@ -187,7 +190,7 @@
     color: #F2711D;
     background-color: #f0f0f0;
     font-size: 16px;
-    margin-left: 10px; /* Відступ між +/- */
+    margin-left: 10px;
 }
 
 .disabled {
@@ -199,11 +202,8 @@
 .buy-section {
     width: 100%;
     height: 140px;
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
+    background-color: #f5f5f5;
+    display: grid;
 }
 
 .cart .order-sum span {
@@ -222,15 +222,15 @@
 
 .order-sum {
     height: 50px;
-    display: flex;
+    display: grid;
     align-items: center;
     border-top: 1px solid #e0e0e0;
+    background-color: white;
 }
 
 .cart .buy-section .order-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .ordering {
