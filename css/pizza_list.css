@@ -75,6 +75,14 @@
     text-decoration: underline;
 }
 
+
+.filters .chosen {
+    color: #c85a0c;
+    font-weight: bold;
+    text-decoration: none; /* Прибираємо підкреслення*/
+}
+
+
 .pizza-item {
     position: relative;
     border-radius: 5px;

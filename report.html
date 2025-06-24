@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт по замовленню - Pizza KMA</title>
+
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/components.css">
+
+    <link href="https://cdn.webdatarocks.com/latest/webdatarocks.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="css/report.css">
+
+</head>
+<body>
+
+<div class="header">
+    <div class="delivery-name">
+        <span>Піца</span>
+        <span>КМА</span>
+        <img src="images/discount.svg" class="pizza-hat" alt="Pizza Hat"/>
+    </div>
+    <div class="delivery-info">
+        <div class="main-info">
+            <div class="info-details">
+                <span class="phone">(044) 222 5 222</span>
+                <span class="working-hours">24 години 7 днів на тиждень</span>
+                <span class="delivery-status">Безкоштовна доставка піци</span>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="report.html" class="sign-in" style="background-color: #d85c10;">Звіт</a>
+                <button type="button" class="sign-in">Ввійти</button>
+            </div>
+        </div>
+        <div class="pizza">
+            Pizza
+        </div>
+    </div>
+</div>
+
+
+<div class="report-container">
+    <h1>Звіт по поточному замовленню</h1>
+    <p>Тут ви можете проаналізувати ваше поточне замовлення за допомогою інтерактивної таблиці.</p>
+    <a href="index.html" class="back-to-shop-btn">← Повернутись до магазину</a>
+
+    <!-- Контейнер для звіту WebDataRocks -->
+    <div id="wd-pivot-container"></div>
+
+    <div id="no-data-message" style="display: none; text-align: center; padding: 50px; font-size: 18px; color: #888;">
+        Ваш кошик порожній. Додайте товари, щоб побачити звіт.
+    </div>
+</div>
+
+
+<div class="footer">
+    <span>Pizza KMA 2023</span>
+    <span>Всі права захищено.</span>
+</div>
+
+<script src="https://cdn.webdatarocks.com/latest/webdatarocks.toolbar.min.js"></script>
+<script src="https://cdn.webdatarocks.com/latest/webdatarocks.js"></script>
+
+<script src="js/storage.js"></script>
+<script src="js/report.js"></script>
+
+</body>
+</html>

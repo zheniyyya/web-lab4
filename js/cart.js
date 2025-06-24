@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // Функція для відмальовки всіх товарів з масиву `items`
+    // function to paint from a massive `items`
     function renderAllCartItems() {
         orderList.innerHTML = '';
 
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
 
     function updateTotals() {
         let totalSum = 0;
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cartTitleCount.textContent = totalCount;
         cartTotalSum.textContent = `${totalSum} грн`;
+        //значок к-сті
         cartTitleCount.style.display = totalCount > 0 ? 'grid' : 'none';
 
         if (totalCount === 0) {
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //main object to control the cart
     window.pizzaCart = {
         items: [],
         allPizzas: [],
@@ -96,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.cartStorage.save(this.items);
         },
 
+        //+/-/delete
         update(pizzaId, size, action) {
             const itemIndex = this.items.findIndex(item => item.id === pizzaId && item.size === size);
             if (itemIndex === -1) return;
