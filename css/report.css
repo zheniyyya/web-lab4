@@ -1,0 +1,55 @@
+body {
+    padding-top: 100px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.footer {
+    margin-top: 50px;
+}
+
+.report-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.report-container h1 {
+    font-size: 32px;
+    color: #333;
+    border-bottom: 2px solid #F2711D;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.report-container p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.back-to-shop-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F2711D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-shop-btn:hover {
+    background-color: #d85c10;
+}
+
+.wdr-ui {
+    z-index: 10 !important;
+}

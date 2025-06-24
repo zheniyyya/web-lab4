@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.renderFunction(filteredPizzas);
             }
 
+
+            //підкреслюємо вибраний фільтир кольором це у pizza_list.css
             const filterContainer = document.querySelector('.pizza-filters .filters');
             const currentActive = filterContainer.querySelector('.chosen');
             if (currentActive) {

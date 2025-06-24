@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             renderPizzas(allPizzas);
 
+
+            //передаємо дані піц кошику і фільтру
             if (window.pizzaCart) {
                 window.pizzaCart.init(allPizzas);
             }
