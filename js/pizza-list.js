@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const pizzaContainer = document.getElementById('pizza-list-container');
@@ -11,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badgeHTML = '<div class="popular">Популярна</div>';
         }
 
-        const smallSize = pizza.sizes[0];
-        const largeSize = pizza.sizes[1];
+        const smallSize = pizza.sizes.find(s => s.size === 'S') || pizza.sizes[0];
+        const largeSize = pizza.sizes.find(s => s.size === 'L') || pizza.sizes[1];
 
         return `
-            <div class="pizza-item">
+            <div class="pizza-item" data-id="${pizza.id}">
                 ${badgeHTML}
                 <img src="${pizza.image}" alt="Піца ${pizza.name}">
                 
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="price-value">${smallSize.price}</span>
                             <span class="currency">грн.</span>
                         </div>
-                        <button>Купити</button>
+                        <button data-size="S">Купити</button>
                     </div>
 
                     <!-- Великий розмір -->
@@ -47,34 +48,51 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="price-value">${largeSize.price}</span>
                             <span class="currency">грн.</span>
                         </div>
-                        <button>Купити</button>
+                        <button data-size="L">Купити</button>
                     </div>
                 </div>
             </div>
         `;
     }
 
-    // Функція завантаження та відображення піц
-    async function loadAndRenderPizzas() {
+
+    function renderPizzas(pizzasToRender) {
+        if (pizzasAmountSpan) {
+            pizzasAmountSpan.textContent = pizzasToRender.length;
+        }
+
+        if (pizzaContainer) {
+            pizzaContainer.innerHTML = '';
+            if (pizzasToRender.length === 0) {
+                pizzaContainer.innerHTML = '<p style="text-align: center; padding: 40px; color: #555;">За вашим фільтром піц не знайдено.</p>';
+            } else {
+                pizzasToRender.forEach(pizza => {
+                    const pizzaCardHTML = createPizzaCardHTML(pizza);
+                    pizzaContainer.insertAdjacentHTML('beforeend', pizzaCardHTML);
+                });
+            }
+        }
+    }
+
+
+    async function loadPizzas() {
         try {
             const response = await fetch('pizzas.json');
             if (!response.ok) {
                 throw new Error(`HTTP помилка! Статус: ${response.status}`);
             }
-            const pizzas = await response.json();
+            const allPizzas = await response.json();
 
-            if (pizzasAmountSpan) {
-                pizzasAmountSpan.textContent = pizzas.length;
+            renderPizzas(allPizzas);
+
+            if (window.pizzaCart) {
+                window.pizzaCart.init(allPizzas);
             }
 
-            if (pizzaContainer) {
-                pizzaContainer.innerHTML = '';
-
-                pizzas.forEach(pizza => {
-                    const pizzaCardHTML = createPizzaCardHTML(pizza);
-                    pizzaContainer.insertAdjacentHTML('beforeend', pizzaCardHTML);
-                });
+            if (window.pizzaFilters) {
+                window.pizzaFilters.init(allPizzas, renderPizzas);
             }
+
         } catch (error) {
             console.error("Не вдалося завантажити піци:", error);
             if(pizzaContainer) {
@@ -83,5 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    loadAndRenderPizzas();
+    // Обробник кліків на кнопки "Купити"
+    if (pizzaContainer) {
+        pizzaContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' && e.target.dataset.size) {
+                const pizzaItem = e.target.closest('.pizza-item');
+                const pizzaId = parseInt(pizzaItem.dataset.id);
+                const size = e.target.dataset.size;
+
+                if (window.pizzaCart) {
+                    window.pizzaCart.add(pizzaId, size);
+                }
+            }
+        });
+    }
+
+    loadPizzas();
 });

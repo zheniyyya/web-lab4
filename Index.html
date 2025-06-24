@@ -40,13 +40,14 @@
         <span>
             Всі піци<span class="pizzas-amount" id="pizzas-amount">0</span>
         </span>
+
         <div class="filters">
-            <span class="all chosen">Усі</span>
-            <span class="meat">М'ясні</span>
-            <span class="pineapple">З ананасами</span>
-            <span class="mushrooms">З грибами</span>
-            <span class="seafood">З морепродуктами</span>
-            <span class="vegan">Веганські</span>
+            <span class="all chosen" data-filter="all">Усі</span>
+            <span class="meat" data-filter="meat">М'ясні</span>
+            <span class="pineapple" data-filter="pineapple">З ананасами</span>
+            <span class="mushrooms" data-filter="mushrooms">З грибами</span>
+            <span class="seafood" data-filter="seafood">З морепродуктами</span>
+            <span class="vegan" data-filter="vegan">Веганські</span>
         </div>
     </div>
 
@@ -72,7 +73,7 @@
 
 <div class="cart">
     <div class="cart-title">
-        <span>Замовлення<span>3</span></span>
+        <span>Замовлення<span>0</span></span>
         <span class="clear-order">Очистити замовлення</span>
     </div>
     <div class="order-list">
@@ -80,7 +81,7 @@
     <div class="buy-section">
         <div class="order-sum">
             <span>Сума замовлення</span>
-            <label class="sum">924 грн</label>
+            <label class="sum">0 грн</label>
         </div>
         <div class="order-section">
             <button type="button" class="ordering">
@@ -90,7 +91,10 @@
     </div>
 </div>
 
-<script src="js/add-pizza.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/pizza-list.js"></script>
 
 </body>
 </html>
